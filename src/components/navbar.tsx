@@ -2,70 +2,72 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navLinks } from "@/data/navigation";
-import { ArrowRight } from "lucide-react";
+import { NAV_LINKS } from "@/data/navigation";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export default function NavBar() {
+interface NavbarProps {
+    theme?: "dark" | "light";
+}
+
+export function Navbar({ theme = "dark" }: NavbarProps) {
     const pathname = usePathname();
-
-    // Determine if we're on a light theme page
-    const isLightTheme = pathname === "/plan" || pathname === "/company";
+    const isDark = theme === "dark";
 
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isLightTheme
-                    ? "bg-white border-b border-gray-100"
-                    : "bg-black/20 backdrop-blur-xl border-b border-white/5"
-                }`}
+        <header
+            className={cn(
+                "fixed top-0 left-0 right-0 z-50 flex h-[var(--header-height)] items-center justify-between px-4 sm:px-10 transition-colors duration-300 backdrop-blur-md",
+                isDark ? "bg-charcoal/80 text-white" : "bg-white/80 text-charcoal border-b border-gray-100"
+            )}
         >
-            <div className="max-w-7xl mx-auto px-6 py-4">
-                <div className="flex items-center justify-between">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center">
-                        <span
-                            className={`text-xl font-bold tracking-tight ${isLightTheme ? "text-gray-900" : "text-white"
-                                }`}
-                        >
-                            creati studio
-                        </span>
-                    </Link>
-
-                    {/* Center Navigation Links */}
-                    <div className="hidden md:flex items-center gap-8">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`relative text-sm font-medium transition-colors duration-200 ${isLightTheme
-                                        ? "text-gray-600 hover:text-gray-900"
-                                        : "text-gray-300 hover:text-white"
-                                    } ${pathname === link.href ? (isLightTheme ? "text-gray-900" : "text-white") : ""}`}
-                            >
-                                <span className="flex items-center gap-1.5">
-                                    {link.name}
-                                    {link.isNew && (
-                                        <span className="bg-blue-100 text-blue-600 text-[10px] font-semibold px-1.5 py-0.5 rounded">
-                                            NEW
-                                        </span>
-                                    )}
-                                </span>
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* CTA Button */}
-                    <Link
-                        href="#create"
-                        className={`group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${isLightTheme
-                                ? "bg-gray-900 text-white hover:bg-gray-800"
-                                : "glass gradient-border text-white hover:bg-white/10"
-                            }`}
-                    >
-                        Go Create
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                    </Link>
+            {/* Logo Area */}
+            <Link href="/" className="flex items-center gap-2">
+                <div className="text-2xl font-bold tracking-tighter">
+                    creati<span className="text-creati-blue">.</span>studio
                 </div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-1">
+                {NAV_LINKS.map((link) => {
+                    const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
+                    return (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={cn(
+                                "relative flex h-11 items-center justify-center px-4 text-sm font-medium transition-colors hover:opacity-70",
+                                isDark ? "text-white" : "text-charcoal",
+                                isActive && "opacity-100"
+                            )}
+                        >
+                            {link.label}
+                            {link.isNew && (
+                                <div className="absolute -right-1 top-1.5 flex h-4 items-center rounded bg-white/10 px-1">
+                                    <span className="text-[10px] font-bold italic new-badge-gradient">
+                                        NEW
+                                    </span>
+                                </div>
+                            )}
+                        </Link>
+                    );
+                })}
+            </nav>
+
+            {/* Actions */}
+            <div className="flex items-center gap-4">
+                <Button
+                    variant={isDark ? "glass" : "primary"}
+                    size="sm"
+                    className="rounded-full"
+                    href="#create"
+                >
+                    Go Create
+                </Button>
             </div>
-        </nav>
+        </header>
     );
 }
+
+export default Navbar;

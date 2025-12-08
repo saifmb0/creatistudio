@@ -1,10 +1,13 @@
-export const navLinks = [
-    { name: "Use Cases", href: "/features" },
-    { name: "Features", href: "/features/image-to-video" },
-    { name: "Pricing", href: "/plan" },
-    { name: "About Us", href: "/company" },
-    { name: "Speak", href: "/speak", isNew: true },
+export const NAV_LINKS = [
+    { label: "Use Cases", href: "/#use-cases" },
+    { label: "Features", href: "/features/image-to-video" },
+    { label: "Pricing", href: "/plan" },
+    { label: "About Us", href: "/company" },
+    { label: "Speak", href: "/speak", isNew: true },
 ];
+
+// Legacy export for backwards compatibility
+export const navLinks = NAV_LINKS;
 
 export const footerLinks = {
     followUs: [
