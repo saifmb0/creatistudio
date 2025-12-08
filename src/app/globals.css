@@ -9,12 +9,13 @@
   --color-foreground: var(--foreground);
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-  /* Dark Mode Colors */
-  --color-dark-bg: #100f14;
-  --color-dark-card: #1c1c1e;
-  --color-muted-gray: #9f9fa5;
+  /* Brand Colors */
+  --color-charcoal: #100f14;
+  --color-card-dark: #1c1c1e;
+  --color-creati-blue: #2a64f2;
+  --color-muted: #9f9fa5;
 
-  /* Light Mode Colors */
+  /* Light Theme */
   --color-light-bg: #ffffff;
   --color-light-text: #1d1d1f;
 }
@@ -22,6 +23,7 @@
 :root {
   --background: #100f14;
   --foreground: #ffffff;
+  --header-height: 72px;
 }
 
 /* Glass Effect Utilities */
@@ -29,7 +31,13 @@
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
 }
 
 .glass-light {
@@ -57,6 +65,11 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+/* Blue Gradient */
+.blue-gradient {
+  background: linear-gradient(90deg, #2862f4, #02b1e9 20.1%, #f7c6a8 76.87%, #f1567b);
 }
 
 /* Infinite Marquee Animation */
@@ -91,9 +104,34 @@
   animation: shimmer 2s infinite;
 }
 
+/* Bounce Right Animation */
+@keyframes bounce-right {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(25%);
+  }
+}
+
+.animate-bounce-right {
+  animation: bounce-right 1s infinite;
+}
+
 /* Star Rating Gradient */
 .star-gradient {
   background: linear-gradient(135deg, #ffd700, #ffb347, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* NEW Badge Gradient */
+.new-badge-gradient {
+  background: linear-gradient(90deg, #F7C6A8, #DDE6D0, #2F9FC4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -109,12 +147,23 @@
   scrollbar-width: none;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Smooth Scroll */
@@ -124,6 +173,6 @@ html {
 
 /* Selection Color */
 ::selection {
-  background: rgba(59, 130, 246, 0.3);
+  background: rgba(42, 100, 242, 0.3);
   color: inherit;
 }
