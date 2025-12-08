@@ -1,19 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { footerLinks } from "@/data/navigation";
+import { cn } from "@/lib/utils";
 
-export default function Footer() {
-    const pathname = usePathname();
+interface FooterProps {
+    theme?: "dark" | "light";
+}
 
-    // Determine if we're on a light theme page
-    const isLightTheme = pathname === "/plan" || pathname === "/company";
+export function Footer({ theme = "dark" }: FooterProps) {
+    const isDark = theme === "dark";
 
     return (
         <footer
-            className={`py-16 ${isLightTheme ? "bg-white border-t border-gray-100" : "bg-[#100f14] border-t border-white/5"
-                }`}
+            className={cn(
+                "py-16",
+                isDark ? "bg-charcoal border-t border-white/5" : "bg-white border-t border-gray-100"
+            )}
         >
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -21,15 +24,19 @@ export default function Footer() {
                     <div className="md:col-span-1">
                         <Link href="/" className="inline-block">
                             <span
-                                className={`text-xl font-bold tracking-tight ${isLightTheme ? "text-gray-900" : "text-white"
-                                    }`}
+                                className={cn(
+                                    "text-xl font-bold tracking-tight",
+                                    isDark ? "text-white" : "text-charcoal"
+                                )}
                             >
-                                creati studio
+                                creati<span className="text-creati-blue">.</span>studio
                             </span>
                         </Link>
                         <p
-                            className={`mt-4 text-sm leading-relaxed ${isLightTheme ? "text-gray-500" : "text-gray-400"
-                                }`}
+                            className={cn(
+                                "mt-4 text-sm leading-relaxed",
+                                isDark ? "text-gray-400" : "text-gray-500"
+                            )}
                         >
                             Transform your ideas into viral videos with AI-powered generation.
                         </p>
@@ -38,8 +45,10 @@ export default function Footer() {
                     {/* Follow Us */}
                     <div>
                         <h4
-                            className={`text-sm font-semibold mb-4 ${isLightTheme ? "text-gray-900" : "text-white"
-                                }`}
+                            className={cn(
+                                "text-sm font-semibold mb-4",
+                                isDark ? "text-white" : "text-charcoal"
+                            )}
                         >
                             Follow Us
                         </h4>
@@ -48,10 +57,12 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className={`text-sm transition-colors ${isLightTheme
-                                                ? "text-gray-500 hover:text-gray-900"
-                                                : "text-gray-400 hover:text-white"
-                                            }`}
+                                        className={cn(
+                                            "text-sm transition-colors",
+                                            isDark
+                                                ? "text-gray-400 hover:text-white"
+                                                : "text-gray-500 hover:text-charcoal"
+                                        )}
                                     >
                                         {link.name}
                                     </Link>
@@ -63,8 +74,10 @@ export default function Footer() {
                     {/* Company */}
                     <div>
                         <h4
-                            className={`text-sm font-semibold mb-4 ${isLightTheme ? "text-gray-900" : "text-white"
-                                }`}
+                            className={cn(
+                                "text-sm font-semibold mb-4",
+                                isDark ? "text-white" : "text-charcoal"
+                            )}
                         >
                             Company
                         </h4>
@@ -73,10 +86,12 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className={`text-sm transition-colors ${isLightTheme
-                                                ? "text-gray-500 hover:text-gray-900"
-                                                : "text-gray-400 hover:text-white"
-                                            }`}
+                                        className={cn(
+                                            "text-sm transition-colors",
+                                            isDark
+                                                ? "text-gray-400 hover:text-white"
+                                                : "text-gray-500 hover:text-charcoal"
+                                        )}
                                     >
                                         {link.name}
                                     </Link>
@@ -88,8 +103,10 @@ export default function Footer() {
                     {/* Resources */}
                     <div>
                         <h4
-                            className={`text-sm font-semibold mb-4 ${isLightTheme ? "text-gray-900" : "text-white"
-                                }`}
+                            className={cn(
+                                "text-sm font-semibold mb-4",
+                                isDark ? "text-white" : "text-charcoal"
+                            )}
                         >
                             Resources
                         </h4>
@@ -98,10 +115,12 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className={`text-sm transition-colors ${isLightTheme
-                                                ? "text-gray-500 hover:text-gray-900"
-                                                : "text-gray-400 hover:text-white"
-                                            }`}
+                                        className={cn(
+                                            "text-sm transition-colors",
+                                            isDark
+                                                ? "text-gray-400 hover:text-white"
+                                                : "text-gray-500 hover:text-charcoal"
+                                        )}
                                     >
                                         {link.name}
                                     </Link>
@@ -113,12 +132,16 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div
-                    className={`mt-12 pt-8 border-t ${isLightTheme ? "border-gray-100" : "border-white/5"
-                        }`}
+                    className={cn(
+                        "mt-12 pt-8 border-t",
+                        isDark ? "border-white/5" : "border-gray-100"
+                    )}
                 >
                     <p
-                        className={`text-sm ${isLightTheme ? "text-gray-400" : "text-gray-500"
-                            }`}
+                        className={cn(
+                            "text-sm",
+                            isDark ? "text-gray-500" : "text-gray-400"
+                        )}
                     >
                         © 2025 All Rights Reserved
                     </p>
@@ -127,3 +150,5 @@ export default function Footer() {
         </footer>
     );
 }
+
+export default Footer;
