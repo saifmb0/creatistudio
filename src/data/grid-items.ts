@@ -1,8 +1,12 @@
-// News Cards for horizontal scroll section
+import { ASSETS } from "./assets";
+
+// News Cards for horizontal scroll section - with live video URLs
 export interface NewsCard {
     id: number;
     title: string;
-    thumbnail: string;
+    description: string;
+    video: string;
+    thumbnail?: string;
     category: string;
 }
 
@@ -10,32 +14,23 @@ export const newsCards: NewsCard[] = [
     {
         id: 1,
         title: "Google Veo 3.1",
-        thumbnail: "https://placehold.co/400x225/6366f1/ffffff?text=Veo+3.1",
+        description: "Go viral now with the Veo 3.1.",
+        video: ASSETS.news.veo,
         category: "AI Update",
     },
     {
         id: 2,
         title: "Try Sora 2 Now",
-        thumbnail: "https://placehold.co/400x225/8b5cf6/ffffff?text=Sora+2",
+        description: "The Most Hyped Video Model By OpenAI.",
+        video: ASSETS.news.sora,
         category: "New Feature",
     },
     {
         id: 3,
         title: "Try Nano Banana",
-        thumbnail: "https://placehold.co/400x225/ec4899/ffffff?text=Nano+Banana",
+        description: "Nano Banana limited offer at Creati Studio.",
+        video: ASSETS.news.banana,
         category: "Creative",
-    },
-    {
-        id: 4,
-        title: "SeeDance Mode Launch",
-        thumbnail: "https://placehold.co/400x225/f59e0b/ffffff?text=SeeDance",
-        category: "Feature",
-    },
-    {
-        id: 5,
-        title: "4K Ultra Export",
-        thumbnail: "https://placehold.co/400x225/10b981/ffffff?text=4K+Ultra",
-        category: "Update",
     },
 ];
 
@@ -58,36 +53,36 @@ export const gridItems: GridItem[] = [
     { id: 8, title: "Coffee Art", thumbnail: "https://placehold.co/270x480/78350f/ffffff?text=Coffee+Art", category: "Snap" },
 ];
 
-// Use Cases Section
+// Use Cases Section - with live video URLs
 export interface UseCase {
     id: number;
     title: string;
     description: string;
-    image: string;
-    rotation: number;
+    video: string;
+    rotation: string;
 }
 
 export const useCases: UseCase[] = [
     {
         id: 1,
         title: "Sync Mode",
-        description: "Perfect lip-sync for any language. Turn any avatar into a multilingual presenter.",
-        image: "https://placehold.co/320x640/6366f1/ffffff?text=Sync+Mode",
-        rotation: 15,
+        description: "Drop your product URL to get a high-impact video in seconds.",
+        video: ASSETS.useCases.sync,
+        rotation: "rotate-[15deg]",
     },
     {
         id: 2,
         title: "Snap Mode",
-        description: "Instant video from a single image. Watch your photos come alive.",
-        image: "https://placehold.co/320x640/8b5cf6/ffffff?text=Snap+Mode",
-        rotation: -15,
+        description: "Turn any image into a scroll-stopping video. One click, endless looks.",
+        video: ASSETS.useCases.snap,
+        rotation: "-rotate-[15deg]",
     },
     {
         id: 3,
         title: "Swap",
-        description: "Replace products seamlessly. Perfect for e-commerce and advertisements.",
-        image: "https://placehold.co/320x640/ec4899/ffffff?text=Swap",
-        rotation: 12,
+        description: "Instantly remix backgrounds, models, or products. Infinite assets.",
+        video: ASSETS.useCases.swap,
+        rotation: "rotate-[12deg]",
     },
 ];
 
@@ -117,3 +112,6 @@ export const creatorTabs = [
     { id: "image", label: "Image to video", isActive: false },
     { id: "veo", label: "VEO3.1", isActive: false, hasSparkle: true },
 ];
+
+// Hero Video URL
+export const heroVideoUrl = ASSETS.heroVideo;
