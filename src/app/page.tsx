@@ -67,8 +67,8 @@ export default function Home() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${activeTab === tab.id
-                      ? "bg-blue-500/20 text-blue-400"
-                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                    ? "bg-blue-500/20 text-blue-400"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
                     }`}
                 >
                   {tab.label}
@@ -128,15 +128,20 @@ export default function Home() {
                 className="flex-shrink-0 w-80 group cursor-pointer"
               >
                 <div className="relative aspect-video rounded-2xl overflow-hidden bg-[#1c1c1e]">
-                  <Image
-                    src={card.thumbnail}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
+                  <video
+                    src={card.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                  <div className="absolute bottom-4 left-4 right-4">
                     <span className="text-white font-semibold">{card.title}</span>
+                    <p className="text-gray-300 text-sm mt-1">{card.description}</p>
+                  </div>
+                  <div className="absolute bottom-4 right-4">
                     <ArrowRight className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
                   </div>
                 </div>
@@ -156,8 +161,8 @@ export default function Home() {
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${activeFilter === cat
-                    ? "bg-white text-black"
-                    : "text-gray-400 bg-white/5 hover:bg-white/10"
+                  ? "bg-white text-black"
+                  : "text-gray-400 bg-white/5 hover:bg-white/10"
                   }`}
               >
                 {cat}
@@ -215,18 +220,18 @@ export default function Home() {
                 </h3>
                 <p className="text-gray-400">{useCase.description}</p>
               </div>
-              <motion.div
-                whileHover={{ rotate: useCase.rotation > 0 ? 20 : -20 }}
-                style={{ rotate: useCase.rotation }}
-                className="relative w-40 h-80 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0"
+              <div
+                className={`relative w-40 h-80 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0 ${useCase.rotation}`}
               >
-                <Image
-                  src={useCase.image}
-                  alt={useCase.title}
-                  fill
-                  className="object-cover"
+                <video
+                  src={useCase.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
                 />
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
