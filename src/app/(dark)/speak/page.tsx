@@ -2,17 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { speakCards } from "@/data/speak";
 
 export default function SpeakPage() {
     return (
-        <div className="min-h-screen bg-[#100f14]">
-            <NavBar />
-
+        <>
             {/* Hero Section */}
-            <section className="pt-32 pb-8 px-6">
+            <section className="pt-8 pb-8 px-6">
                 <div className="max-w-7xl mx-auto text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -49,10 +45,10 @@ export default function SpeakPage() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.4, delay: index * 0.05 }}
                                 className={`relative rounded-2xl overflow-hidden group cursor-pointer ${card.size === "medium"
-                                        ? "row-span-2"
-                                        : card.size === "large"
-                                            ? "col-span-2 row-span-2"
-                                            : ""
+                                    ? "row-span-2"
+                                    : card.size === "large"
+                                        ? "col-span-2 row-span-2"
+                                        : ""
                                     }`}
                             >
                                 <Image
@@ -163,8 +159,6 @@ export default function SpeakPage() {
                     </motion.div>
                 </div>
             </section>
-
-            <Footer />
-        </div>
+        </>
     );
 }

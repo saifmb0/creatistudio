@@ -3,19 +3,15 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Sliders, Clock } from "lucide-react";
-import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { features, featureImages, howToSteps } from "@/data/features";
 
 export default function FeaturesPage() {
     const featureIcons = [Zap, Sliders, Clock];
 
     return (
-        <div className="min-h-screen bg-[#100f14]">
-            <NavBar />
-
+        <>
             {/* Hero Section */}
-            <section className="pt-32 pb-16 px-6">
+            <section className="pt-8 pb-16 px-6">
                 <div className="max-w-7xl mx-auto text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -194,8 +190,6 @@ export default function FeaturesPage() {
                     </motion.div>
                 </div>
             </section>
-
-            <Footer />
-        </div>
+        </>
     );
 }

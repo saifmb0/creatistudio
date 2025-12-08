@@ -4,8 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
-import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 const pricingFeatures = [
     "230+ AI Avatars",
@@ -18,11 +16,9 @@ const pricingFeatures = [
 
 export default function PlanPage() {
     return (
-        <div className="min-h-screen bg-white">
-            <NavBar />
-
+        <>
             {/* Hero Section */}
-            <section className="pt-32 pb-24 px-6">
+            <section className="pt-8 pb-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         {/* Left Content */}
@@ -235,8 +231,6 @@ export default function PlanPage() {
                     </div>
                 </div>
             </section>
-
-            <Footer />
-        </div>
+        </>
     );
 }
