@@ -20,18 +20,20 @@ export const ASSETS = {
         bytedance: "/assets/icons/model_bytedance_convert.svg",
     },
 
-    // Grid Images (WebP posters)
+    // Grid Images (WebP posters) - Exact live site order
     grid: {
-        claw: "/assets/grid/0529_ClawCrane_icon_creati_firstframeHD.webp",
         fpv: "/assets/grid/a_250804_0804_FPV_20DRONR_creati_866.webp",
+        claw: "/assets/grid/0529_ClawCrane_icon_creati_firstframeHD.webp",
+        silkBlue: "/assets/grid/creati_silkBlue.webp",
+        catDanceRed: "/assets/grid/creati_Cat_Ads_Dance_0725_firstframe.webp",
+        supermodel: "/assets/grid/creati_supermodel_firstframeHD.webp",
+        neon: "/assets/grid/PaletteFit_ICON_Creati_0623_firstframeHD.webp",
+        makeup: "/assets/grid/mini_makeup_pink_video_firstframeHD.webp",
+        bag: "/assets/grid/trimmed_trimmed_Bag_ICON_firstframe.webp",
+        dance: "/assets/grid/creati_Cat_Ads_Dance_blue_firstframeHD.webp",
         spin: "/assets/grid/nano_spinning_fall_0509_firstframeHD.webp",
         waves: "/assets/grid/d_250701_Lazy_20Susan_20_4__096_firstframeHD.webp",
-        neon: "/assets/grid/PaletteFit_ICON_Creati_0623_firstframeHD.webp",
-        dance: "/assets/grid/creati_Cat_Ads_Dance_blue_firstframeHD.webp",
-        bag: "/assets/grid/trimmed_trimmed_Bag_ICON_firstframe.webp",
-        makeup: "/assets/grid/mini_makeup_pink_video_firstframeHD.webp",
         cream: "/assets/grid/creati_liquid_cream_female_firstframeHD.webp",
-        supermodel: "/assets/grid/creati_supermodel_firstframeHD.webp",
         floral: "/assets/grid/FloralEyes_ICON_Creati_firstframe.webp",
         chic: "/assets/grid/ChicFashion_icon_firstframe.webp",
     },

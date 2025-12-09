@@ -44,17 +44,15 @@ export interface GridItem {
 }
 
 export const gridItems: GridItem[] = [
-    { id: 1, title: "Claw Machine", thumbnail: ASSETS.grid.claw, category: "Show", color: "#4a1942" },
-    { id: 2, title: "Spin Fall", thumbnail: ASSETS.grid.spin, category: "Snap", color: "#ea580c" },
-    { id: 3, title: "Ocean Waves", thumbnail: ASSETS.grid.waves, category: "Show", color: "#0891b2" },
-    { id: 4, title: "Cat Dance", thumbnail: ASSETS.grid.dance, category: "Snap", color: "#831843" },
-    { id: 5, title: "Tech Bag", thumbnail: ASSETS.grid.bag, category: "Show", color: "#2563eb" },
-    { id: 6, title: "Makeup", thumbnail: ASSETS.grid.makeup, category: "Snap", color: "#f472b6" },
-    { id: 7, title: "Cream Model", thumbnail: ASSETS.grid.cream, category: "Speaker", color: "#fcd34d" },
-    { id: 8, title: "Neon Palette", thumbnail: ASSETS.grid.neon, category: "Show", color: "#7c3aed" },
-    { id: 9, title: "Supermodel", thumbnail: ASSETS.grid.supermodel, category: "Speaker", color: "#10b981" },
-    { id: 10, title: "Floral Eyes", thumbnail: ASSETS.grid.floral, category: "Snap", color: "#f59e0b" },
-    { id: 11, title: "Chic Fashion", thumbnail: ASSETS.grid.chic, category: "Show", color: "#ec4899" },
+    { id: 1, title: "FPV Drone", thumbnail: ASSETS.grid.fpv, category: "Show", color: "#1e3a5f" },
+    { id: 2, title: "Claw Machine", thumbnail: ASSETS.grid.claw, category: "Show", color: "#4a1942" },
+    { id: 3, title: "Silk Blue", thumbnail: ASSETS.grid.silkBlue, category: "Snap", color: "#2563eb" },
+    { id: 4, title: "Cat Dance", thumbnail: ASSETS.grid.catDanceRed, category: "Snap", color: "#dc2626" },
+    { id: 5, title: "Model", thumbnail: ASSETS.grid.supermodel, category: "Speaker", color: "#0369a1" },
+    { id: 6, title: "Palette", thumbnail: ASSETS.grid.neon, category: "Show", color: "#7c3aed" },
+    { id: 7, title: "Makeup", thumbnail: ASSETS.grid.makeup, category: "Snap", color: "#f472b6" },
+    { id: 8, title: "Black Bag", thumbnail: ASSETS.grid.bag, category: "Show", color: "#1c1c1e" },
+    { id: 9, title: "Cat Dance Blue", thumbnail: ASSETS.grid.dance, category: "Snap", color: "#3b82f6" },
 ];
 
 // Use Cases Section - with live video URLs

@@ -16,7 +16,7 @@ export function Footer({ theme = "dark" }: FooterProps) {
         <footer
             className={cn(
                 "py-12 font-[Arial]",
-                isDark ? "bg-[#050505] border-t border-white/5" : "bg-white border-t border-gray-100"
+                isDark ? "bg-[#100f14] border-t border-white/5" : "bg-white border-t border-gray-100"
             )}
         >
             <div className="max-w-7xl mx-auto px-6">

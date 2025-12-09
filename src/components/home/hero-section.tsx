@@ -21,7 +21,7 @@ export function HeroSection() {
                     className="w-full h-full object-cover"
                     src={ASSETS.heroVideo}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/50 to-[#050505]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#100f14]/80 via-[#100f14]/50 to-[#100f14]" />
             </div>
 
             {/* Heading - Exact typography */}
