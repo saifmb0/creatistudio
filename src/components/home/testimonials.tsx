@@ -23,6 +23,7 @@ export function Testimonials() {
                                         src={testimonial.avatar}
                                         alt={testimonial.name}
                                         fill
+                                        unoptimized
                                         className="object-cover"
                                     />
                                 </div>
