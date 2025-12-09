@@ -9,8 +9,8 @@ export function HeroSection() {
     const [inputValue, setInputValue] = useState("");
 
     return (
-        <section className="flex-center relative z-10 flex-col overflow-hidden px-4 pb-5 pt-20 sm:pt-40">
-            {/* Background Video */}
+        <section className="flex-center relative z-10 flex-col px-4 pb-5 pt-[calc(var(--header-height)+60px)] sm:pt-[calc(var(--header-height)+80px)]">
+            {/* Background Video - extends behind navbar */}
             <div className="absolute inset-0 z-[-1] opacity-40">
                 <video
                     autoPlay

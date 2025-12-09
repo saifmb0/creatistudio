@@ -5,7 +5,7 @@ export default function DarkLayout({ children }: { children: React.ReactNode }) 
     return (
         <div className="min-h-screen bg-charcoal text-white selection:bg-creati-blue/30">
             <Navbar theme="dark" />
-            <main className="pt-[var(--header-height)]">
+            <main>
                 {children}
             </main>
             <Footer theme="dark" />

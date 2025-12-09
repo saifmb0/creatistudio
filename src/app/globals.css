@@ -49,7 +49,7 @@ body {
 
 /* Navbar - Exact from computed styles */
 .navbar-glass {
-  background: rgba(16, 15, 20, 0.8);
+  background: rgba(16, 15, 20, 0.8) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
