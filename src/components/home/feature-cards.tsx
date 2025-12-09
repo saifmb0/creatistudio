@@ -34,7 +34,7 @@ export function FeatureCards() {
                 <div
                     key={idx}
                     className={cn(
-                        "w-full rounded-3xl border border-white/10 bg-[#100f14] p-12 flex items-center justify-between gap-[60px]",
+                        "w-full rounded-3xl border border-white/10 bg-[#050505] p-8 sm:p-12 flex items-center justify-between gap-[60px]",
                         idx % 2 === 1 && "flex-row-reverse"
                     )}
                 >
