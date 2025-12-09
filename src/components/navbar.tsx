@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/data/navigation";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -17,14 +16,16 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
     return (
         <header
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 flex h-[var(--header-height)] items-center justify-between px-4 sm:px-10 transition-colors duration-300 backdrop-blur-md",
-                isDark ? "bg-[#050505]/80 text-white" : "bg-white/80 text-charcoal border-b border-gray-100"
+                "fixed top-0 left-0 right-0 z-50 flex h-[var(--header-height)] items-center justify-between px-4 sm:px-10 transition-colors duration-300",
+                isDark
+                    ? "bg-[#100f14]/80 backdrop-blur-[10px] text-white"
+                    : "bg-white/80 backdrop-blur-[10px] text-charcoal border-b border-gray-100"
             )}
         >
             {/* Logo Area */}
             <Link href="/" className="flex items-center gap-2">
-                <div className="text-2xl font-bold tracking-tighter">
-                    creati<span className="text-[#2957FF]">.</span>studio
+                <div className="text-xl font-bold tracking-tight">
+                    creati<span className="text-[#2a64f2]">.</span>studio
                 </div>
             </Link>
 
@@ -44,8 +45,8 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
                         >
                             {link.label}
                             {link.isNew && (
-                                <div className="absolute -right-1 top-1.5 flex h-4 items-center rounded bg-white/10 px-1">
-                                    <span className="text-[10px] font-bold italic new-badge-gradient">
+                                <div className="absolute -right-2 top-1 flex h-5 w-9 items-center justify-center rounded-[5px] bg-white/10 scale-90">
+                                    <span className="text-xs font-bold italic new-badge-gradient">
                                         NEW
                                     </span>
                                 </div>
@@ -55,15 +56,18 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
                 })}
             </nav>
 
-            {/* Actions */}
+            {/* Actions - Go Create Button with gradient border */}
             <div className="flex items-center gap-4">
-                <Button
-                    className="rounded-full bg-gradient-to-r from-[#2957FF] to-[#00C2FF] text-white font-semibold hover:opacity-90 transition-opacity"
-                    size="sm"
+                <Link
                     href="#create"
+                    className="relative h-10 px-5 rounded-full bg-[#0c1011] text-white font-medium text-sm flex items-center justify-center overflow-hidden group"
                 >
-                    Go Create
-                </Button>
+                    {/* Gradient border effect */}
+                    <span className="absolute inset-0 rounded-full p-[1px] go-create-gradient opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <span className="relative z-10 bg-[#0c1011] rounded-full px-4 h-[calc(100%-2px)] flex items-center">
+                        Go Create
+                    </span>
+                </Link>
             </div>
         </header>
     );
