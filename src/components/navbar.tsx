@@ -20,7 +20,7 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 flex h-[var(--header-height)] items-center justify-between px-4 sm:px-10 transition-colors duration-300",
                 isDark
-                    ? "bg-[#100f14]/80 backdrop-blur-[10px] text-white"
+                    ? "navbar-glass text-white"
                     : "bg-white/80 backdrop-blur-[10px] text-charcoal border-b border-gray-100"
             )}
         >
