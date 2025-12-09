@@ -18,8 +18,8 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 flex h-[var(--header-height)] items-center justify-between px-4 sm:px-10 transition-colors duration-300",
                 isDark
-                    ? "bg-[#100f14]/80 backdrop-blur-[10px] text-white"
-                    : "bg-white/80 backdrop-blur-[10px] text-charcoal border-b border-gray-100"
+                    ? "bg-[#050505]/80 backdrop-blur-[20px] text-white"
+                    : "bg-white/80 backdrop-blur-[20px] text-charcoal border-b border-gray-100"
             )}
         >
             {/* Logo Area */}
@@ -45,11 +45,9 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
                         >
                             {link.label}
                             {link.isNew && (
-                                <div className="absolute -right-2 top-1 flex h-5 w-9 items-center justify-center rounded-[5px] bg-white/10 scale-90">
-                                    <span className="text-xs font-bold italic new-badge-gradient">
-                                        NEW
-                                    </span>
-                                </div>
+                                <span className="absolute -right-3 top-1 scale-75 bg-white/10 px-2 py-0.5 rounded text-[10px] font-bold italic tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F7C6A8] via-[#DDE6D0] to-[#2F9FC4]">
+                                    NEW
+                                </span>
                             )}
                         </Link>
                     );
@@ -58,16 +56,14 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
 
             {/* Actions - Go Create Button with gradient border */}
             <div className="flex items-center gap-4">
-                <Link
-                    href="#create"
-                    className="relative h-10 px-5 rounded-full bg-[#0c1011] text-white font-medium text-sm flex items-center justify-center overflow-hidden group"
-                >
-                    {/* Gradient border effect */}
-                    <span className="absolute inset-0 rounded-full p-[1px] go-create-gradient opacity-70 group-hover:opacity-100 transition-opacity" />
-                    <span className="relative z-10 bg-[#0c1011] rounded-full px-4 h-[calc(100%-2px)] flex items-center">
+                <div className="relative rounded-full p-[1px] bg-gradient-to-r from-[#2862f4] via-[#02b1e9] via-[#f7c6a8] to-[#f1567b]">
+                    <Link
+                        href="#create"
+                        className="flex h-10 px-5 rounded-full bg-[#0c1011] text-white font-medium text-sm items-center justify-center hover:bg-[#0c1011]/80 transition-colors"
+                    >
                         Go Create
-                    </span>
-                </Link>
+                    </Link>
+                </div>
             </div>
         </header>
     );
