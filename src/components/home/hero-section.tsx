@@ -17,6 +17,7 @@ export function HeroSection() {
                     loop
                     muted
                     playsInline
+                    poster={ASSETS.heroPoster}
                     className="w-full h-full object-cover"
                     src={ASSETS.heroVideo}
                 />
