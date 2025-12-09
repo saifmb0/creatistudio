@@ -1,5 +1,5 @@
-/* Font Import - must be first */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Font Import - Outfit as fallback for Folito/Sawton Bauhaus */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 
@@ -7,13 +7,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
 
-  /* Brand Colors */
-  --color-charcoal: #050505;
+  /* Brand Colors - Exact from source */
+  --color-charcoal: #100f14;
   --color-card-dark: #1c1c1e;
   --color-card-feature: #0F0F11;
-  --color-creati-blue: #2957FF;
+  --color-creati-blue: #2a64f2;
   --color-muted: #9f9fa5;
 
   /* Light Theme */
@@ -22,16 +22,19 @@
 }
 
 :root {
-  --background: #050505;
-  --foreground: #E0E0E0;
-  --header-height: 72px;
+  --background: #100f14;
+  --foreground: #ffffff;
+  --header-height: 4.75rem;
+  /* 76px exact */
+  --creati-blue: #2a64f2;
+  --text-muted: #9f9fa5;
 }
 
 /* Glass Effect Utilities */
 .glass {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -68,9 +71,14 @@
   pointer-events: none;
 }
 
+/* Go Create Button Glow Gradient - Exact from source */
+.go-create-gradient {
+  background: linear-gradient(90deg, #2862f4, #02b1e9 20.1%, #f7c6a8 76.87%, #f1567b);
+}
+
 /* Blue Gradient */
 .blue-gradient {
-  background: linear-gradient(90deg, #2957FF, #00C2FF);
+  background: linear-gradient(90deg, #2a64f2, #00C2FF);
 }
 
 /* Infinite Marquee Animation */
@@ -122,17 +130,17 @@
   animation: bounce-right 1s infinite;
 }
 
-/* Star Rating Gradient */
+/* Star Rating Gradient - Exact from source */
 .star-gradient {
-  background: linear-gradient(135deg, #ffd700, #ffb347, #ffd700);
+  background: linear-gradient(90deg, #FFA771 3.81%, #FBFFBC 52.3%, #28B7E6 100.79%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* NEW Badge Gradient */
+/* NEW Badge Gradient - Exact from source */
 .new-badge-gradient {
-  background: linear-gradient(90deg, #F7C6A8, #DDE6D0, #2F9FC4);
+  background: linear-gradient(96.39deg, #F7C6A8 3.81%, #DDE6D0 52.3%, #2F9FC4 100.79%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -161,7 +169,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
   font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   -webkit-font-smoothing: antialiased;
@@ -174,6 +182,6 @@ html {
 
 /* Selection Color */
 ::selection {
-  background: rgba(41, 87, 255, 0.3);
+  background: rgba(42, 100, 242, 0.3);
   color: inherit;
 }
