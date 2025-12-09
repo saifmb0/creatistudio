@@ -17,7 +17,6 @@ export function HeroSection() {
                     loop
                     muted
                     playsInline
-                    poster={ASSETS.heroPoster}
                     className="w-full h-full object-cover"
                     src={ASSETS.heroVideo}
                 />
@@ -25,16 +24,16 @@ export function HeroSection() {
             </div>
 
             {/* Heading - Exact typography */}
-            <h1 className="text-[48px] md:text-[64px] font-medium leading-tight tracking-tight mb-3 text-white">
+            <h1 className="text-[48px] md:text-[64px] font-medium leading-tight tracking-tight mb-3 text-white font-heading">
                 Go Viral with Creati
             </h1>
             <p className="text-[#9f9fa5] mb-8 text-base max-w-xl">
                 Viral AI Video Generator For Url, Image Or Text To Video
             </p>
 
-            {/* The Input Engine - Inch Perfect */}
+            {/* The Input Engine - 800px, rounded-[32px] */}
             <div className="w-full max-w-[800px]">
-                <div className="bg-[#242529]/50 backdrop-blur-[20px] rounded-[32px] border border-white/10 p-3">
+                <div className="glass-panel rounded-[32px] p-3">
 
                     {/* Inner Content Box */}
                     <div className="h-28 bg-transparent rounded-[20px] flex gap-3">
