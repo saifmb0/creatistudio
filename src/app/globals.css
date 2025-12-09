@@ -10,9 +10,10 @@
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
   /* Brand Colors */
-  --color-charcoal: #100f14;
+  --color-charcoal: #050505;
   --color-card-dark: #1c1c1e;
-  --color-creati-blue: #2a64f2;
+  --color-card-feature: #0F0F11;
+  --color-creati-blue: #2957FF;
   --color-muted: #9f9fa5;
 
   /* Light Theme */
@@ -21,8 +22,8 @@
 }
 
 :root {
-  --background: #100f14;
-  --foreground: #ffffff;
+  --background: #050505;
+  --foreground: #E0E0E0;
   --header-height: 72px;
 }
 
@@ -69,7 +70,7 @@
 
 /* Blue Gradient */
 .blue-gradient {
-  background: linear-gradient(90deg, #2862f4, #02b1e9 20.1%, #f7c6a8 76.87%, #f1567b);
+  background: linear-gradient(90deg, #2957FF, #00C2FF);
 }
 
 /* Infinite Marquee Animation */
@@ -173,6 +174,6 @@ html {
 
 /* Selection Color */
 ::selection {
-  background: rgba(42, 100, 242, 0.3);
+  background: rgba(41, 87, 255, 0.3);
   color: inherit;
 }
