@@ -20,7 +20,7 @@ export function HeroSection() {
                     className="w-full h-full object-cover"
                     src={ASSETS.heroVideo}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/50 to-[#050505]" />
             </div>
 
             {/* Heading - Exact typography */}
@@ -31,15 +31,15 @@ export function HeroSection() {
                 Viral AI Video Generator For Url, Image Or Text To Video
             </p>
 
-            {/* The Input Engine - Exact from source */}
+            {/* The Input Engine - Inch Perfect */}
             <div className="w-full max-w-[800px]">
-                <div className="bg-[#242529]/50 backdrop-blur-3xl rounded-[32px] border border-white/10 p-3">
+                <div className="bg-[#242529]/50 backdrop-blur-[20px] rounded-[32px] border border-white/10 p-3">
 
                     {/* Inner Content Box */}
                     <div className="h-28 bg-transparent rounded-[20px] flex gap-3">
 
-                        {/* Left Icon - Grace Area */}
-                        <div className="w-16 h-22 shrink-0 bg-[#2c2c2e] rounded-md border border-white/10 rotate-[-8deg] hover:rotate-0 transition-all cursor-pointer flex items-center justify-center self-center ml-2">
+                        {/* Left Icon - Grace Area (Exact: w-16 h-22 -rotate-6) */}
+                        <div className="w-16 h-22 shrink-0 bg-[#2c2c2e] rounded-lg border border-white/10 -rotate-6 hover:rotate-0 transition-all cursor-pointer flex items-center justify-center self-center ml-2">
                             <Plus className="w-6 h-6 text-white/60" />
                         </div>
 
@@ -75,12 +75,12 @@ export function HeroSection() {
                     </div>
                 </div>
 
-                {/* Viral Tags Row - Below Input */}
+                {/* Viral Tags Row - Below Input (h-[26px] text-xs border-white/20 bg-white/5) */}
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
                     {["Ads By Veo3.1", "Viral By Sora2", "Product x SeeDance"].map((tag) => (
                         <span
                             key={tag}
-                            className="h-[26px] px-3 rounded-full border border-white/20 bg-[#4a4a4a]/20 text-xs font-medium text-white backdrop-blur flex items-center gap-2"
+                            className="h-[26px] px-3 rounded-full border border-white/20 bg-white/5 text-xs font-medium text-white backdrop-blur flex items-center"
                         >
                             {tag}
                         </span>
