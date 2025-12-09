@@ -9,8 +9,8 @@
   --color-foreground: var(--foreground);
   --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
 
-  /* Brand Colors - Exact from source */
-  --color-charcoal: #100f14;
+  /* Brand Colors - Inch-Perfect */
+  --color-charcoal: #050505;
   --color-card-dark: #1c1c1e;
   --color-card-feature: #0F0F11;
   --color-creati-blue: #2a64f2;
@@ -22,7 +22,7 @@
 }
 
 :root {
-  --background: #100f14;
+  --background: #050505;
   --foreground: #ffffff;
   --header-height: 4.75rem;
   /* 76px exact */
@@ -33,9 +33,9 @@
 /* Glass Effect Utilities */
 .glass {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-card {
