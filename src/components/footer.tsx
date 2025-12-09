@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { footerLinks } from "@/data/navigation";
 import { cn } from "@/lib/utils";
+import { Twitter, Instagram, Linkedin, Facebook } from "lucide-react";
 
 interface FooterProps {
     theme?: "dark" | "light";
@@ -15,7 +16,7 @@ export function Footer({ theme = "dark" }: FooterProps) {
         <footer
             className={cn(
                 "py-16",
-                isDark ? "bg-charcoal border-t border-white/5" : "bg-white border-t border-gray-100"
+                isDark ? "bg-[#050505] border-t border-white/5" : "bg-white border-t border-gray-100"
             )}
         >
             <div className="max-w-7xl mx-auto px-6">
@@ -29,7 +30,7 @@ export function Footer({ theme = "dark" }: FooterProps) {
                                     isDark ? "text-white" : "text-charcoal"
                                 )}
                             >
-                                creati<span className="text-creati-blue">.</span>studio
+                                creati<span className="text-[#2957FF]">.</span>studio
                             </span>
                         </Link>
                         <p
@@ -133,7 +134,7 @@ export function Footer({ theme = "dark" }: FooterProps) {
                 {/* Bottom Bar */}
                 <div
                     className={cn(
-                        "mt-12 pt-8 border-t",
+                        "mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4",
                         isDark ? "border-white/5" : "border-gray-100"
                     )}
                 >
@@ -143,8 +144,23 @@ export function Footer({ theme = "dark" }: FooterProps) {
                             isDark ? "text-gray-500" : "text-gray-400"
                         )}
                     >
-                        © 2025 All Rights Reserved
+                        © 2025 Creati Studio
                     </p>
+
+                    <div className="flex items-center gap-4">
+                        <Link href="#" className="text-gray-500 hover:text-white transition-colors">
+                            <Twitter size={20} />
+                        </Link>
+                        <Link href="#" className="text-gray-500 hover:text-white transition-colors">
+                            <Instagram size={20} />
+                        </Link>
+                        <Link href="#" className="text-gray-500 hover:text-white transition-colors">
+                            <Linkedin size={20} />
+                        </Link>
+                        <Link href="#" className="text-gray-500 hover:text-white transition-colors">
+                            <Facebook size={20} />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>

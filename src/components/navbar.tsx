@@ -18,13 +18,13 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 flex h-[var(--header-height)] items-center justify-between px-4 sm:px-10 transition-colors duration-300 backdrop-blur-md",
-                isDark ? "bg-charcoal/80 text-white" : "bg-white/80 text-charcoal border-b border-gray-100"
+                isDark ? "bg-[#050505]/80 text-white" : "bg-white/80 text-charcoal border-b border-gray-100"
             )}
         >
             {/* Logo Area */}
             <Link href="/" className="flex items-center gap-2">
                 <div className="text-2xl font-bold tracking-tighter">
-                    creati<span className="text-creati-blue">.</span>studio
+                    creati<span className="text-[#2957FF]">.</span>studio
                 </div>
             </Link>
 
@@ -58,9 +58,8 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
             {/* Actions */}
             <div className="flex items-center gap-4">
                 <Button
-                    variant={isDark ? "glass" : "primary"}
+                    className="rounded-full bg-gradient-to-r from-[#2957FF] to-[#00C2FF] text-white font-semibold hover:opacity-90 transition-opacity"
                     size="sm"
-                    className="rounded-full"
                     href="#create"
                 >
                     Go Create
