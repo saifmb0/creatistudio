@@ -33,12 +33,12 @@ export function MasonryGallery() {
                 ))}
             </div>
 
-            {/* CSS Grid - Exact from source */}
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-[8px]">
+            {/* CSS Grid - Inch Perfect */}
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-2">
                 {filteredItems.map((item) => (
                     <div
                         key={item.id}
-                        className="relative group cursor-pointer overflow-hidden rounded-lg bg-card-dark aspect-[9/16]"
+                        className="relative group cursor-pointer overflow-hidden rounded-[10px] bg-card-dark aspect-[9/16]"
                     >
                         {item.thumbnail ? (
                             <img

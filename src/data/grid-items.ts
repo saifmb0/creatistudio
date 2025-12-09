@@ -44,15 +44,15 @@ export interface GridItem {
 }
 
 export const gridItems: GridItem[] = [
-    { id: 1, title: "FPV Drone", thumbnail: "https://placehold.co/400x600/1e3a5f/ffffff?text=FPV+Drone", category: "Show", color: "#1e3a5f" },
-    { id: 2, title: "Blue Bag", thumbnail: "", category: "Show", color: "#2563eb" },
-    { id: 3, title: "Model", thumbnail: "", category: "Speaker", color: "#0369a1" },
-    { id: 4, title: "Makeup", thumbnail: "", category: "Snap", color: "#ea580c" },
-    { id: 5, title: "Claw Machine", thumbnail: "https://placehold.co/400x600/4a1942/ffffff?text=Claw+Machine", category: "Snap", color: "#4a1942" },
-    { id: 6, title: "Cat Dance", thumbnail: "", category: "Snap", color: "#831843" },
-    { id: 7, title: "Palette", thumbnail: "", category: "Show", color: "#7c3aed" },
-    { id: 8, title: "Car Chase", thumbnail: "", category: "Show", color: "#0891b2" },
-    { id: 9, title: "Cat Ads", thumbnail: "", category: "Speaker", color: "#78350f" },
+    { id: 1, title: "Claw Machine", thumbnail: "/assets/0529_ClawCrane_icon_creati_firstframeHD.webp", category: "Show", color: "#4a1942" },
+    { id: 2, title: "Spin Fall", thumbnail: "/assets/nano_spinning_fall_0509_firstframeHD.webp", category: "Snap", color: "#ea580c" },
+    { id: 3, title: "Ocean Waves", thumbnail: "/assets/d_250701_Lazy_20Susan_20_4__096_firstframeHD.webp", category: "Show", color: "#0891b2" },
+    { id: 4, title: "Cat Dance", thumbnail: "/assets/creati_Cat_Ads_Dance_blue_firstframeHD.webp", category: "Snap", color: "#831843" },
+    { id: 5, title: "Tech Bag", thumbnail: "/assets/trimmed_trimmed_Bag_ICON_firstframe.webp", category: "Show", color: "#2563eb" },
+    { id: 6, title: "Makeup", thumbnail: "/assets/mini_makeup_pink_video_firstframeHD.webp", category: "Snap", color: "#f472b6" },
+    { id: 7, title: "Cream Female", thumbnail: "/assets/creati_liquid_cream_female_firstframeHD.webp", category: "Speaker", color: "#fcd34d" },
+    { id: 8, title: "Colorful Crew", thumbnail: "/assets/0725_Colorful_Crew_Showcase_firstframe.webp", category: "Show", color: "#7c3aed" },
+    { id: 9, title: "Palette Fit", thumbnail: "/assets/PaletteFit_ICON_Creati_0623_firstframeHD.webp", category: "Speaker", color: "#10b981" },
 ];
 
 // Use Cases Section - with live video URLs
