@@ -1,15 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
-:root {
-  --header-height: 76px;
-  /* Precise pixel value from source */
-  --background: #100f14;
-  --foreground: #ffffff;
-  --creati-blue: #2a64f2;
-}
+@import "tailwindcss";
 
+/* Local Font Faces */
 @font-face {
   font-family: 'Sawton Bauhaus';
   src: url('/assets/fonts/SawtonBauhaus-Medium.ttf') format('truetype');
@@ -26,34 +20,60 @@
   font-display: swap;
 }
 
+/* Theme Configuration - Tailwind v4 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Folito', 'Outfit', system-ui, sans-serif;
+  --font-heading: 'Sawton Bauhaus', 'Outfit', sans-serif;
+  --color-charcoal: #100f14;
+  --color-card-dark: #1c1c1e;
+  --color-creati-blue: #2a64f2;
+}
+
+:root {
+  --header-height: 76px;
+  --background: #100f14;
+  --foreground: #ffffff;
+  --creati-blue: #2a64f2;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Folito', sans-serif;
+  font-family: 'Folito', 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Precise Glass Utility from Live Site */
+/* Glass Panel Utility */
 .glass-panel {
   background: rgba(36, 37, 41, 0.5);
   backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Text Gradient Utilities */
 .text-gradient-new {
   background: linear-gradient(96.39deg, #F7C6A8 3.81%, #DDE6D0 52.3%, #2F9FC4 100.79%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Star Rating Gradient */
 .star-gradient {
   background: linear-gradient(90deg, #FFA771 3.81%, #FBFFBC 52.3%, #28B7E6 100.79%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Infinite Marquee Animation */
+/* Button Glow */
+.btn-glow {
+  background: linear-gradient(90deg, #2862f4, #02b1e9 20.1%, #f7c6a8 76.87%, #f1567b);
+}
+
+/* Marquee Animation */
 @keyframes marquee {
   0% {
     transform: translateX(0);
