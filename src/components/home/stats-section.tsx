@@ -19,9 +19,9 @@ export function StatsSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className="h-[280px] w-full rounded-3xl border border-white/5 bg-transparent flex flex-col items-center justify-center"
+                        className="flex flex-col items-center justify-center"
                     >
-                        <span className="text-[6rem] font-bold tracking-tighter text-white mb-2">
+                        <span className="text-7xl md:text-9xl font-bold tracking-tighter text-white mb-2 font-heading">
                             {stat.value}
                         </span>
                         <span className="text-xs tracking-[0.2em] text-[#9f9fa5] uppercase font-medium">
