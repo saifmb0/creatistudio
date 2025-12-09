@@ -56,17 +56,15 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
                 })}
             </nav>
 
-            {/* Actions - Go Create Button with gradient border */}
+            {/* Actions - Go Create Button with gradient haze effect */}
             <div className="flex items-center gap-4">
-                <div className="relative rounded-full p-[1px] btn-glow">
-                    <Link
-                        href="#create"
-                        className="flex h-10 px-5 gap-2 rounded-full bg-[#0c1011] text-white font-medium text-sm items-center justify-center hover:bg-[#0c1011]/80 transition-colors"
-                    >
-                        <Image src={ASSETS.ui.sparkle} alt="" width={16} height={16} className="w-4 h-4" />
-                        Go Create
-                    </Link>
-                </div>
+                <Link
+                    href="#create"
+                    className="gradient-shadow flex-center relative h-9 sm:h-10 gap-2 rounded-full border border-white/20 bg-[#0c1011] px-2.5 sm:px-5 py-1 font-heading text-sm font-medium text-white hover:bg-[#0c1011]/80 transition-colors"
+                >
+                    <Image src={ASSETS.ui.sparkle} alt="" width={16} height={16} className="w-4 h-4" />
+                    Go Create
+                </Link>
             </div>
         </header>
     );
