@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Upload, Link as LinkIcon, Video } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Plus, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ASSETS } from "@/data/assets";
 
 export function HeroSection() {
-    const [activeTab, setActiveTab] = useState<"image" | "url" | "video">("image");
+    const [inputValue, setInputValue] = useState("");
 
     return (
-        <section className="relative pt-20 pb-24 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <section className="relative pt-28 pb-20 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
             {/* Background Video */}
             <div className="absolute inset-0 z-[-1] opacity-40">
                 <video
@@ -24,65 +23,68 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal" />
             </div>
 
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-4 text-white">
+            {/* Heading - Exact typography */}
+            <h1 className="text-[48px] md:text-[64px] font-medium leading-tight tracking-tight mb-3 text-white">
                 Go Viral with Creati
             </h1>
-            <p className="text-muted mb-12 text-lg md:text-xl max-w-2xl">
+            <p className="text-[#9f9fa5] mb-8 text-base max-w-xl">
                 Viral AI Video Generator For Url, Image Or Text To Video
             </p>
 
-            {/* The Pill Input Card */}
-            <div className="w-full max-w-4xl relative">
-                <div className="glass-card rounded-[2rem] p-3 backdrop-blur-xl bg-[#151515]/80 border border-white/10 flex flex-col gap-4">
+            {/* The Input Engine - Exact from source */}
+            <div className="w-full max-w-[800px]">
+                <div className="bg-[#242529]/50 backdrop-blur-3xl rounded-[32px] border border-white/10 p-3">
 
-                    {/* Top Row: Tabs */}
-                    <div className="flex justify-start px-2 pt-1">
-                        <div className="flex gap-1 bg-black/20 p-1 rounded-full">
-                            {[
-                                { id: "image", label: "IMAGE" },
-                                { id: "url", label: "URL" },
-                                { id: "video", label: "VIDEO" },
-                            ].map((tab) => (
-                                <button
-                                    key={tab.id}
-                                    onClick={() => setActiveTab(tab.id as "image" | "url" | "video")}
-                                    className={cn(
-                                        "px-4 py-1.5 rounded-full text-[10px] font-semibold transition-all uppercase tracking-wide",
-                                        activeTab === tab.id
-                                            ? "bg-white/10 text-white"
-                                            : "text-muted hover:text-white"
-                                    )}
-                                >
-                                    {tab.label}
-                                </button>
-                            ))}
+                    {/* Inner Content Box */}
+                    <div className="h-28 bg-transparent rounded-[20px] flex gap-3">
+
+                        {/* Left Icon - Grace Area */}
+                        <div className="w-16 h-22 shrink-0 bg-[#2c2c2e] rounded-md border border-white/10 rotate-[-8deg] hover:rotate-0 transition-all cursor-pointer flex items-center justify-center self-center ml-2">
+                            <Plus className="w-6 h-6 text-white/60" />
                         </div>
-                    </div>
 
-                    {/* Middle Row: Input Field */}
-                    <div className="px-4 py-2">
-                        <input
-                            type="text"
-                            placeholder="Paste your video link here..."
-                            className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/20 text-lg font-medium"
+                        {/* Right - Textarea */}
+                        <textarea
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            placeholder="Type an idea, watch it become art"
+                            className="bg-transparent text-sm text-white placeholder:text-[#aeaeb2] resize-none h-full w-full p-3 outline-none"
                         />
                     </div>
 
-                    {/* Bottom Row: Tags & Button */}
-                    <div className="flex justify-between items-end px-2 pb-1">
-                        <div className="flex gap-2 mb-1">
-                            <span className="px-3 py-1 rounded-full border border-white/10 text-[10px] text-gray-400 bg-[#1A1A1A]">
-                                Ads By Veo3.1
-                            </span>
-                            <span className="hidden sm:block px-3 py-1 rounded-full border border-white/10 text-[10px] text-gray-400 bg-[#1A1A1A]">
-                                Viral By Sora2
-                            </span>
-                        </div>
+                    {/* Bottom Controls */}
+                    <div className="flex justify-between items-center px-2 pt-2">
+                        {/* Left - Dropdown */}
+                        <button className="h-8 bg-[#18222b]/80 border border-[#41a2f2] text-[#41a2f2] rounded-lg text-sm font-bold px-3 flex items-center gap-1.5">
+                            Create Video
+                            <ChevronDown className="w-4 h-4" />
+                        </button>
 
-                        <Button className="bg-gradient-to-r from-[#2957FF] to-[#00C2FF] rounded-full px-8 py-6 text-base font-bold text-white hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(41,87,255,0.3)]">
+                        {/* Right - Generate Button */}
+                        <button
+                            disabled={!inputValue.trim()}
+                            className={cn(
+                                "h-11 w-40 rounded-full bg-[#2a64f2] text-white font-medium text-lg transition-all",
+                                inputValue.trim()
+                                    ? "hover:bg-[#3f73f3] opacity-100"
+                                    : "opacity-50 cursor-not-allowed"
+                            )}
+                        >
                             Generate
-                        </Button>
+                        </button>
                     </div>
+                </div>
+
+                {/* Viral Tags Row - Below Input */}
+                <div className="flex flex-wrap justify-center gap-2 mt-4">
+                    {["Ads By Veo3.1", "Viral By Sora2", "Product x SeeDance"].map((tag) => (
+                        <span
+                            key={tag}
+                            className="h-[26px] px-3 rounded-full border border-white/20 bg-[#4a4a4a]/20 text-xs font-medium text-white backdrop-blur flex items-center gap-2"
+                        >
+                            {tag}
+                        </span>
+                    ))}
                 </div>
             </div>
         </section>
