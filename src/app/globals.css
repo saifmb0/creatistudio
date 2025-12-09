@@ -3,9 +3,9 @@
 
 @import "tailwindcss";
 
-/* Local Font Faces */
+/* Local Font Faces - Extracted from creati.studio */
 @font-face {
-  font-family: 'Sawton Bauhaus';
+  font-family: 'Sawton Circular';
   src: url('/assets/fonts/SawtonBauhaus-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
@@ -25,7 +25,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: 'Folito', 'Outfit', system-ui, sans-serif;
-  --font-heading: 'Sawton Bauhaus', 'Outfit', sans-serif;
+  --font-heading: 'Sawton Circular', 'Outfit', sans-serif;
   --color-charcoal: #100f14;
   --color-card-dark: #1c1c1e;
   --color-creati-blue: #2a64f2;
@@ -33,7 +33,9 @@
 
 :root {
   --header-height: 76px;
+  /* Exact from live site */
   --background: #100f14;
+  /* Exact: rgba(16,15,20) */
   --foreground: #ffffff;
   --creati-blue: #2a64f2;
 }
@@ -45,12 +47,71 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glass Panel Utility */
+/* Navbar - Exact from computed styles */
+.navbar-glass {
+  background: rgba(16, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hero Input Glass Panel - Exact from live site */
 .glass-panel {
   background: rgba(36, 37, 41, 0.5);
+  /* #242529 @ 50% */
   backdrop-filter: blur(64px);
   -webkit-backdrop-filter: blur(64px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Input Inner - Exact: h-28 rounded-[20px] */
+.hero-input-inner {
+  height: 7rem;
+  /* h-28 */
+  border-radius: 20px;
+}
+
+/* Gallery Grid - Exact from CSS */
+.gallery-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  column-gap: 8px;
+  grid-auto-flow: row;
+  grid-auto-rows: 1px;
+  margin-top: 1rem;
+  width: 100%;
+  mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0) 1.5rem, #fff 13.5rem, #fff);
+  -webkit-mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0) 1.5rem, #fff 13.5rem, #fff);
+}
+
+@media (min-width: 640px) {
+  .gallery-box {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+@media (min-width: 1616px) {
+  .gallery-box {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Gradient Button Border - Exact from CSS */
+.gradient-shadow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -10;
+  filter: blur(8px);
+  background: linear-gradient(90deg, #2862f4, #02b1e9 20.1%, #f7c6a8 76.87%, #f1567b);
+}
+
+/* Gradient Text - NEW badge */
+.gradient-text {
+  background: var(--gradient-new, linear-gradient(96.39deg, #F7C6A8 3.81%, #DDE6D0 52.3%, #2F9FC4 100.79%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Text Gradient Utilities */
@@ -68,9 +129,20 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Button Glow */
+/* Button Glow - Go Create button */
 .btn-glow {
   background: linear-gradient(90deg, #2862f4, #02b1e9 20.1%, #f7c6a8 76.87%, #f1567b);
+}
+
+/* Feature Card Background */
+.animated-card-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  background: url('/assets/ui/footer-bg.webp') no-repeat;
+  background-size: cover;
 }
 
 /* Marquee Animation */
@@ -86,4 +158,21 @@ body {
 
 .animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+/* Flex Center Utility - from live site */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

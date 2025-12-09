@@ -9,7 +9,7 @@ export function HeroSection() {
     const [inputValue, setInputValue] = useState("");
 
     return (
-        <section className="relative pt-28 pb-20 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <section className="flex-center relative z-10 flex-col overflow-hidden px-4 pb-5 pt-20 sm:pt-40">
             {/* Background Video */}
             <div className="absolute inset-0 z-[-1] opacity-40">
                 <video

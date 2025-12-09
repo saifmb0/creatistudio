@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "className": "fixed left-0 right-0 top-0 z-[9999] flex h-[--header-height] w-full items-center justify-between px-4 font-['Sawton_Circular'] sm:px-10",
+    "background": "rgba(16, 15, 20, 0.8) none repeat scroll 0% 0% / auto padding-box border-box",
+    "backgroundColor": "rgba(16, 15, 20, 0.8)",
+    "backdropFilter": "blur(10px)",
+    "borderRadius": "0px",
+    "padding": "0px 40px",
+    "margin": "0px",
+    "fontSize": "16px",
+    "fontFamily": "\"Sawton Circular\"",
+    "color": "rgb(255, 255, 255)",
+    "border": "0px solid rgb(39, 39, 42)",
+    "boxShadow": "none",
+    "width": "1920px",
+    "maxWidth": "none"
+  },
+  "hero": {
+    "className": "flex-center relative z-10 flex-col overflow-hidden px-4 pb-5 pt-20 sm:pt-40",
+    "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "backdropFilter": "none",
+    "borderRadius": "0px",
+    "padding": "160px 16px 20px",
+    "margin": "0px",
+    "fontSize": "16px",
+    "fontFamily": "Folito",
+    "color": "rgb(255, 255, 255)",
+    "border": "0px solid rgb(39, 39, 42)",
+    "boxShadow": "none",
+    "width": "1920px",
+    "maxWidth": "none"
+  },
+  "heroInput": {
+    "className": "mx-3 flex h-28 flex-nowrap rounded-xl bg-white py-2 pl-2 has-[.image-input-area]:pl-0 dark:bg-transparent sm:rounded-[20px]",
+    "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "backdropFilter": "none",
+    "borderRadius": "20px",
+    "padding": "8px 0px",
+    "margin": "0px 12px",
+    "fontSize": "16px",
+    "fontFamily": "Folito",
+    "color": "rgb(255, 255, 255)",
+    "border": "0px solid rgb(39, 39, 42)",
+    "boxShadow": "none",
+    "width": "774px",
+    "maxWidth": "none"
+  }
+}
