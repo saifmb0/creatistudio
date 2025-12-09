@@ -33,8 +33,8 @@ export function MasonryGallery() {
                 ))}
             </div>
 
-            {/* CSS Grid - Inch Perfect */}
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-2">
+            {/* CSS Grid - Exact from HTML */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                 {filteredItems.map((item) => (
                     <div
                         key={item.id}
