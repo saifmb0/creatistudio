@@ -62,8 +62,8 @@ export function Navbar({ theme = "dark" }: NavbarProps) {
                     href="#create"
                     className="gradient-shadow flex-center relative h-9 sm:h-10 gap-2 rounded-full border border-white/20 bg-[#0c1011] px-2.5 sm:px-5 py-1 font-heading text-sm font-medium text-white hover:bg-[#0c1011]/80 transition-colors"
                 >
-                    <Image src={ASSETS.ui.sparkle} alt="" width={16} height={16} className="w-4 h-4" />
                     Go Create
+                    <Image src={ASSETS.ui.sparkle} alt="" width={16} height={16} className="w-4 h-4" />
                 </Link>
             </div>
         </header>
