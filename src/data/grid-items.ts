@@ -1,91 +1,23 @@
 import { ASSETS } from "./assets";
 
-// News Cards for horizontal scroll section - with live video URLs
-export interface NewsCard {
-    id: number;
-    title: string;
-    description: string;
-    video: string;
-    thumbnail?: string;
-    category: string;
-}
-
-export const newsCards: NewsCard[] = [
-    {
-        id: 1,
-        title: "Google Veo 3.1",
-        description: "Go viral now with the Veo 3.1.",
-        video: ASSETS.news.veo,
-        category: "AI Update",
-    },
-    {
-        id: 2,
-        title: "Try Sora 2 Now",
-        description: "The Most Hyped Video Model By OpenAI.",
-        video: ASSETS.news.sora,
-        category: "New Feature",
-    },
-    {
-        id: 3,
-        title: "Try Nano Banana",
-        description: "Nano Banana limited offer at Creati Studio.",
-        video: ASSETS.news.banana,
-        category: "Creative",
-    },
-];
-
 // Masonry Grid Items (9:16 vertical videos)
 export interface GridItem {
     id: number;
     title: string;
     thumbnail: string;
     category: "All" | "Show" | "Snap" | "Speaker";
-    color?: string; // Fallback solid color
+    color?: string;
 }
 
 export const gridItems: GridItem[] = [
     { id: 1, title: "FPV Drone", thumbnail: ASSETS.grid.fpv, category: "Show", color: "#1e3a5f" },
     { id: 2, title: "Claw Machine", thumbnail: ASSETS.grid.claw, category: "Show", color: "#4a1942" },
-    { id: 3, title: "Silk Blue", thumbnail: ASSETS.grid.silkBlue, category: "Snap", color: "#2563eb" },
-    { id: 4, title: "Cat Dance", thumbnail: ASSETS.grid.catDanceRed, category: "Snap", color: "#dc2626" },
-    { id: 5, title: "Model", thumbnail: ASSETS.grid.supermodel, category: "Speaker", color: "#0369a1" },
-    { id: 6, title: "Palette", thumbnail: ASSETS.grid.neon, category: "Show", color: "#7c3aed" },
-    { id: 7, title: "Makeup", thumbnail: ASSETS.grid.makeup, category: "Snap", color: "#f472b6" },
-    { id: 8, title: "Black Bag", thumbnail: ASSETS.grid.bag, category: "Show", color: "#1c1c1e" },
-    { id: 9, title: "Cat Dance Blue", thumbnail: ASSETS.grid.dance, category: "Snap", color: "#3b82f6" },
-];
-
-// Use Cases Section - with live video URLs
-export interface UseCase {
-    id: number;
-    title: string;
-    description: string;
-    video: string;
-    rotation: string;
-}
-
-export const useCases: UseCase[] = [
-    {
-        id: 1,
-        title: "Sync Mode",
-        description: "Drop your product URL to get a high-impact video in seconds.",
-        video: ASSETS.useCases.sync,
-        rotation: "rotate-[15deg]",
-    },
-    {
-        id: 2,
-        title: "Snap Mode",
-        description: "Turn any image into a scroll-stopping video. One click, endless looks.",
-        video: ASSETS.useCases.snap,
-        rotation: "-rotate-[15deg]",
-    },
-    {
-        id: 3,
-        title: "Swap",
-        description: "Instantly remix backgrounds, models, or products. Infinite assets.",
-        video: ASSETS.useCases.swap,
-        rotation: "rotate-[12deg]",
-    },
+    { id: 3, title: "Spin Fall", thumbnail: ASSETS.grid.spin, category: "Snap", color: "#ea580c" },
+    { id: 4, title: "Ocean Waves", thumbnail: ASSETS.grid.waves, category: "Show", color: "#0891b2" },
+    { id: 5, title: "Palette", thumbnail: ASSETS.grid.palette, category: "Show", color: "#7c3aed" },
+    { id: 6, title: "Cat Dance", thumbnail: ASSETS.grid.dance, category: "Snap", color: "#3b82f6" },
+    { id: 7, title: "Black Bag", thumbnail: ASSETS.grid.bag, category: "Show", color: "#1c1c1e" },
+    { id: 8, title: "Makeup", thumbnail: ASSETS.grid.makeup, category: "Snap", color: "#f472b6" },
 ];
 
 // Stats Data
@@ -107,13 +39,3 @@ export const viralTags = [
     "Viral By Sora2",
     "Product x SeeDance",
 ];
-
-// Creator Tabs
-export const creatorTabs = [
-    { id: "create", label: "Create Video", isActive: true },
-    { id: "image", label: "Image to video", isActive: false },
-    { id: "veo", label: "VEO3.1", isActive: false, hasSparkle: true },
-];
-
-// Hero Video URL
-export const heroVideoUrl = ASSETS.heroVideo;
