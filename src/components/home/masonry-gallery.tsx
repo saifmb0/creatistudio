@@ -54,11 +54,12 @@ export function MasonryGallery() {
                             />
                         )}
 
-                        {/* Hover Overlay - Darken + Generate Icon */}
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
-                                <Play className="w-5 h-5 text-white fill-white" />
-                            </div>
+                        {/* Hover Overlay - Darken + Generate Button */}
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <button className="px-6 py-2.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/20 text-white font-medium text-sm transition-all transform hover:scale-105 flex items-center gap-2">
+                                <Play className="w-4 h-4 fill-current" />
+                                Generate
+                            </button>
                         </div>
 
                         {/* Title */}
