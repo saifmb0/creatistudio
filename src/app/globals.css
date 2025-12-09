@@ -1,8 +1,15 @@
-/* Font Import - Outfit as fallback for Folito/Sawton Bauhaus */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Local Font Faces */
+:root {
+  --header-height: 76px;
+  /* Precise pixel value from source */
+  --background: #100f14;
+  --foreground: #ffffff;
+  --creati-blue: #2a64f2;
+}
+
 @font-face {
   font-family: 'Sawton Bauhaus';
   src: url('/assets/fonts/SawtonBauhaus-Medium.ttf') format('truetype');
@@ -19,111 +26,31 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Folito';
-  src: url('/assets/fonts/Folito-Italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Folito', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-@import "tailwindcss";
-
-/* Custom Theme Variables */
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Folito', 'Outfit', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Sawton Bauhaus', 'Space Grotesk', sans-serif;
-
-  /* Brand Colors - Definitive v3.0 */
-  --color-charcoal: #100f14;
-  --color-card-dark: #1c1c1e;
-  --color-card-feature: #0F0F11;
-  --color-creati-blue: #2a64f2;
-  --color-muted: #9f9fa5;
-
-  /* Light Theme */
-  --color-light-bg: #ffffff;
-  --color-light-text: #1d1d1f;
-}
-
-:root {
-  --background: #100f14;
-  --foreground: #ffffff;
-  --header-height: 4.75rem;
-  /* 76px exact */
-  --creati-blue: #2a64f2;
-  --text-muted: #9f9fa5;
-}
-
-/* Glass Effect Utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+/* Precise Glass Utility from Live Site */
+.glass-panel {
+  background: rgba(36, 37, 41, 0.5);
+  backdrop-filter: blur(64px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-}
-
-.glass-light {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Gradient Border */
-.gradient-border {
-  position: relative;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Go Create Button Glow Gradient - Exact from source */
-.go-create-gradient,
-.btn-glow {
-  background: linear-gradient(90deg, #2862f4, #02b1e9 20.1%, #f7c6a8 76.87%, #f1567b);
-}
-
-/* NEW Badge Gradient - Exact from HTML */
-.new-badge-gradient {
+.text-gradient-new {
   background: linear-gradient(96.39deg, #F7C6A8 3.81%, #DDE6D0 52.3%, #2F9FC4 100.79%);
   -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Star Rating Gradient - Exact from HTML */
-.star-gradient,
-.rating-stars {
+/* Star Rating Gradient */
+.star-gradient {
   background: linear-gradient(90deg, #FFA771 3.81%, #FBFFBC 52.3%, #28B7E6 100.79%);
   -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Blue Gradient */
-.blue-gradient {
-  background: linear-gradient(90deg, #2a64f2, #00C2FF);
+  -webkit-text-fill-color: transparent;
 }
 
 /* Infinite Marquee Animation */
@@ -139,94 +66,4 @@
 
 .animate-marquee {
   animation: marquee 30s linear infinite;
-}
-
-/* Shimmer Effect */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-/* Bounce Right Animation */
-@keyframes bounce-right {
-
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(25%);
-  }
-}
-
-.animate-bounce-right {
-  animation: bounce-right 1s infinite;
-}
-
-/* Star Rating Gradient - Exact from source */
-.star-gradient {
-  background: linear-gradient(90deg, #FFA771 3.81%, #FBFFBC 52.3%, #28B7E6 100.79%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* NEW Badge Gradient - Exact from source */
-.new-badge-gradient {
-  background: linear-gradient(96.39deg, #F7C6A8 3.81%, #DDE6D0 52.3%, #2F9FC4 100.79%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Scroll Hide */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Base Styles */
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-  min-height: 100vh;
-  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection Color */
-::selection {
-  background: rgba(42, 100, 242, 0.3);
-  color: inherit;
 }
