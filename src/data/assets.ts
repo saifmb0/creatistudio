@@ -13,5 +13,10 @@ export const ASSETS = {
         dance: "/assets/grid/dance.webp",
         bag: "/assets/grid/bag.webp",
         makeup: "/assets/grid/makeup.webp",
-    }
+    },
+    useCases: {
+        sync: "https://res.creatiai.ai/web/creatiai/images_animation_1.mp4",
+        snap: "https://res.creatiai.ai/web/creatiai/landing_send_image.mp4",
+        swap: "https://res.creatiai.ai/web/creatiai/image_video_3.mp4",
+    },
 };

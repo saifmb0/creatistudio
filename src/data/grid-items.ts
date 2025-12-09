@@ -1,5 +1,38 @@
 import { ASSETS } from "./assets";
 
+// News Cards for horizontal scroll section
+export interface NewsCard {
+    id: number;
+    title: string;
+    description: string;
+    video: string;
+    category: string;
+}
+
+export const newsCards: NewsCard[] = [
+    {
+        id: 1,
+        title: "Google Veo 3.1",
+        description: "Go viral now with the Veo 3.1.",
+        video: "https://res.creatiai.ai/web/creatiai/buzzy-index-feature-card-veo3_1-20251014.mp4",
+        category: "AI Update",
+    },
+    {
+        id: 2,
+        title: "Try Sora 2 Now",
+        description: "The Most Hyped Video Model By OpenAI.",
+        video: "https://res.creatiai.ai/web/creatiai/buzzy-index-feature-card-veo3-20251014.mp4",
+        category: "New Feature",
+    },
+    {
+        id: 3,
+        title: "Try Nano Banana",
+        description: "Nano Banana limited offer at Creati Studio.",
+        video: "https://res.creatiai.ai/web/creatiai/buzzy-index-feature-card-banana-20250918.mp4",
+        category: "Creative",
+    },
+];
+
 // Masonry Grid Items (9:16 vertical videos)
 export interface GridItem {
     id: number;
