@@ -1,7 +1,7 @@
 export const ASSETS = {
     heroVideo: "https://res.creatiai.ai/web/creatiai/stuido-landing-top-video-202509041951.webm",
     ui: {
-        sparkle: "/assets/ui/btn-sparkle.svg",
+        sparkle: "/assets/ui/sparkle.svg",
         footer: "/assets/ui/footer-bg.webp",
     },
     grid: {
